@@ -56,4 +56,6 @@ body{
     background-color: transparent;
     border: 0px;
     font-size: medium;
+    padding: 5px;
+    border: 2px solid black ;
 }

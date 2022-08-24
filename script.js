@@ -6,6 +6,7 @@ let cal = '';
 let num = [];
 let next = [];
 let execute = false;
+let result = 0;
 
 btn.forEach(btn => btn.addEventListener('click', ()=>{
     
@@ -20,6 +21,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         operator = "+";
         
         
+        if(execute === true){
+            calculate();
+        }
+        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -28,17 +33,68 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             
         } 
         cal='';
-        if(execute === true){
-            calculate();
-        }
-        execute = true;
     }
     if (btn.textContent === "-"){
         operator = "-";
+        
+        
         if(execute === true){
             calculate();
         }
         execute = true;
+        if(num.length === 0){
+            num[0] = parseInt(cal); 
+             
+        }else{
+            num[1] = parseInt(cal);
+            
+        } 
+        cal='';
+    }
+    
+    if (btn.textContent === "*"){
+        operator = "*";
+        
+        
+        if(execute === true){
+            calculate();
+        }
+        execute = true;
+
+        if(num.length === 0){
+            num[0] = parseInt(cal); 
+             
+        }else{
+            num[1] = parseInt(cal);
+            
+        } 
+        cal='';
+    }
+    
+    
+    if (btn.textContent === "/"){
+        operator = "/";
+        
+        
+        if(execute === true){
+            calculate();
+        }
+        execute = true;
+
+        if(num.length === 0){
+            num[0] = parseInt(cal); 
+             
+        }else{
+            num[1] = parseInt(cal);
+            
+        } 
+        cal='';
+    }
+    if (btn.textContent === "clear"){
+        cal = "";
+        scr.textContent = "0";
+        result = 0;
+        num = [];
     }
     
     console.log(num);
@@ -47,31 +103,53 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
 
 function calculate(){
 
+    
+    num[1] = parseInt(cal);
+
     switch(operator){
         case "+":
                 
-               const res = num.reduce((total, num) =>{
+                result = num.reduce((total, num) =>{
                 return total + num;
               });
               
-              scr.textContent = res;
-              num[0]= res;
+              scr.textContent = result;
+              num[0]= result;
               
               break;
               
         case "-":
-                let reso = num.reduce((total, num) =>{
-             return total - num;
+                result = num.reduce((total, num) =>{
+                return total - num;
            });
            
-           scr.textContent = reso;
-           num[0]= reso;
-           console.log(reso);
+           scr.textContent = result;
+           num[0]= result;
+           console.log(result);
            break;
+           
+        case "*":
+            result = num.reduce((total, num) =>{
+            return total * num;
+       });
+       
+            scr.textContent = result;
+            num[0]= result;
+            console.log(result);
+            break;
+            case "/":
+                
+                result = num.reduce((total, num) =>{
+                return total / num;
+              });
+              
+              scr.textContent = result;
+              num[0]= result;
+              
+              break;
               
 
     }
-    console.log("next: "+ next);
     execute = false;
 
 }
