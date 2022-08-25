@@ -104,6 +104,9 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         result = 0;
         num = [];
     }
+    if(btn.textContent === "delete"){
+        cal 
+    }
     
     console.log(num);
 
