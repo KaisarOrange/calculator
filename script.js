@@ -16,14 +16,16 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         cal+=btn.textContent;
         
          console.log("cal: " +cal);
+         scr.textContent = cal;
     }
-    if (btn.textContent === "+"){
-        operator = "+";
-        
+    if (btn.textContent === "+" && cal != ""){
         
         if(execute === true){
             calculate();
         }
+
+        operator = "+";
+        
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -34,13 +36,14 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         } 
         cal='';
     }
-    if (btn.textContent === "-"){
-        operator = "-";
-        
+    if (btn.textContent === "-" && cal != ""){
         
         if(execute === true){
             calculate();
         }
+        operator = "-";
+        
+        
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -52,13 +55,14 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         cal='';
     }
     
-    if (btn.textContent === "*"){
-        operator = "*";
-        
+    if (btn.textContent === "*" && cal != ""){
         
         if(execute === true){
             calculate();
         }
+        
+        operator = "*";
+         
         execute = true;
 
         if(num.length === 0){
@@ -72,9 +76,13 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     
     
-    if (btn.textContent === "/"){
-        operator = "/";
+    if (btn.textContent === "/" && cal != ""){
         
+        if(execute === true){
+            calculate();
+        }
+        
+        operator = "/";
         
         if(execute === true){
             calculate();
