@@ -16,13 +16,16 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         cal+=btn.textContent;
         scr.textContent = cal;
     }
+
+    if (btn.textContent === "+"){
+        
+        if(execute === true && cal !=""){
+            calculate();
+        }
+        operator = "+";
+    }
     if (btn.textContent === "+" && cal != ""){
         
-        if(execute === true){
-            calculate();
-        }
-
-        operator = "+";
         
         execute = true;
         if(num.length === 0){
@@ -33,16 +36,17 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             
         } 
         cal='';
+    }
+    
+    if (btn.textContent === "-"){
+        
+        if(execute === true && cal !=""){
+            calculate();
+        }
+        operator = "-";
     }
     if (btn.textContent === "-" && cal != ""){
-        
-        if(execute === true){
-            calculate();
-        }
-        
-        operator = "-";
-        
-        
+
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -54,16 +58,16 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         cal='';
     }
     
-    if (btn.textContent === "*" && cal != ""){
+    if (btn.textContent === "*"){
         
-        if(execute === true){
+        if(execute === true && cal !=""){
             calculate();
         }
-        
         operator = "*";
-         
-        execute = true;
+    }
+    if (btn.textContent === "*" && cal != ""){
 
+        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -75,19 +79,16 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     
     
-    if (btn.textContent === "/" && cal != ""){
+    if (btn.textContent === "/"){
         
-        if(execute === true){
+        if(execute === true && cal !=""){
             calculate();
         }
-        
         operator = "/";
-        
-        if(execute === true){
-            calculate();
-        }
-        execute = true;
+    }
+    if (btn.textContent === "/" && cal != ""){
 
+        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -97,6 +98,7 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         } 
         cal='';
     }
+
     if (btn.textContent === "clear"){
         cal = "";
         scr.textContent = "0";
@@ -117,6 +119,9 @@ function calculate(){
     num[1] = parseInt(cal);
     
     console.log("cal: " +operator);
+    if(cal == ""){
+        return;
+    }
     switch(operator){
         case "+":
                 
