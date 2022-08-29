@@ -19,14 +19,11 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
 
     if (btn.textContent === "+"){
         
-        if(execute === true){
+        if(execute === true ){
+            
             calculate();
         }
         operator = "+";
-    }
-    if (btn.textContent === "+"){
-        
-        
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -39,14 +36,11 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     
     if (btn.textContent === "-"){
-        
-        if(execute === true){
+        if(execute === true ){
+            
             calculate();
         }
         operator = "-";
-    }
-    if (btn.textContent === "-"){
-
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -60,13 +54,11 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "*"){
         
-        if(execute === true){
+        if(execute === true ){
+            
             calculate();
         }
         operator = "*";
-    }
-    if (btn.textContent === "*"){
-
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -81,13 +73,11 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "/"){
         
-        if(execute === true){
+        if(execute === true ){
+            
             calculate();
         }
         operator = "/";
-    }
-    if (btn.textContent === "/"){
-
         execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
