@@ -26,10 +26,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         operator = "+";
         execute = true;
         if(num.length === 0){
-            num[0] = parseInt(cal); 
+            num[0] = parseFloat(cal); 
              
         }else{
-            num[1] = parseInt(cal);
+            num[1] = parseFloat(cal);
             
         } 
         cal='';
@@ -43,10 +43,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         operator = "-";
         execute = true;
         if(num.length === 0){
-            num[0] = parseInt(cal); 
+            num[0] = parseFloat(cal); 
              
         }else{
-            num[1] = parseInt(cal);
+            num[1] = parseFloat(cal);
             
         } 
         cal='';
@@ -61,10 +61,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         operator = "*";
         execute = true;
         if(num.length === 0){
-            num[0] = parseInt(cal); 
+            num[0] = parseFloat(cal); 
              
         }else{
-            num[1] = parseInt(cal);
+            num[1] = parseFloat(cal);
             
         } 
         cal='';
@@ -80,10 +80,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         operator = "/";
         execute = true;
         if(num.length === 0){
-            num[0] = parseInt(cal); 
+            num[0] = parseFloat(cal); 
              
         }else{
-            num[1] = parseInt(cal);
+            num[1] = parseFloat(cal);
             
         } 
         cal='';
@@ -106,7 +106,7 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
 function calculate(){
 
     
-    num[1] = parseInt(cal);
+    num[1] = parseFloat(cal);
     
     console.log("cal: " +operator);
     if(cal == ""){
@@ -117,44 +117,33 @@ function calculate(){
                 
                 result = num.reduce((total, num) =>{
                 return total + num;
-              });
-              
-              scr.textContent = result;
-              num[0]= result;
-              
-              break;
+                });
+                break;
               
         case "-":
                 result = num.reduce((total, num) =>{
                 return total - num;
-           });
-           
-           scr.textContent = result;
-           num[0]= result;
-           console.log(result);
-           break;
+                });
+                break;
            
         case "*":
-            result = num.reduce((total, num) =>{
-            return total * num;
-       });
-       
-            scr.textContent = result;
-            num[0]= result;
-            console.log(result);
-            break;
+            
+                result = num.reduce((total, num) =>{
+                return total * num;
+                });
+                break;
         case "/":
                 
-            result = num.reduce((total, num) =>{
-            return total / num;
-        });
-              
-            scr.textContent = result;
-            num[0]= result;
-            break;
+                result = num.reduce((total, num) =>{
+                return total / num;
+                });
+                break;
               
 
     }
+    
+    scr.textContent = result;
+    num[0]= result;
     execute = false;
     
 
