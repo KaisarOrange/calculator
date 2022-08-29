@@ -4,11 +4,10 @@ const scr = document.querySelector('.screen')
 let operator ='';
 let cal = '';
 let num = [];
-let next = [];
-let execute = false;
 let result = 0;
 
 btn.forEach(btn => btn.addEventListener('click', ()=>{
+
     
     if(btn.textContent != "+" && btn.textContent != '-' && btn.textContent != '='
     && btn.textContent != '/' && btn.textContent != '*'){
@@ -20,13 +19,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     if (btn.textContent === "+" && cal != ""){
         
-        if(execute === true){
             calculate();
-        }
 
         operator = "+";
         
-        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -38,13 +34,11 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     if (btn.textContent === "-" && cal != ""){
         
-        if(execute === true){
-            calculate();
-        }
+         calculate();
+
         operator = "-";
         
         
-        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -57,13 +51,9 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "*" && cal != ""){
         
-        if(execute === true){
             calculate();
-        }
         
         operator = "*";
-         
-        execute = true;
 
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -78,17 +68,10 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "/" && cal != ""){
         
-        if(execute === true){
-            calculate();
-        }
+        calculate();
         
         operator = "/";
         
-        if(execute === true){
-            calculate();
-        }
-        execute = true;
-
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -114,7 +97,8 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
 
 function calculate(){
 
-    
+    if(execute === true){
+    }
     num[1] = parseInt(cal);
 
     switch(operator){
@@ -161,6 +145,6 @@ function calculate(){
               
 
     }
-    execute = false;
+    
 
 }
