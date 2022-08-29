@@ -19,12 +19,12 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
 
     if (btn.textContent === "+"){
         
-        if(execute === true && cal !=""){
+        if(execute === true){
             calculate();
         }
         operator = "+";
     }
-    if (btn.textContent === "+" && cal != ""){
+    if (btn.textContent === "+"){
         
         
         execute = true;
@@ -40,12 +40,12 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "-"){
         
-        if(execute === true && cal !=""){
+        if(execute === true){
             calculate();
         }
         operator = "-";
     }
-    if (btn.textContent === "-" && cal != ""){
+    if (btn.textContent === "-"){
 
         execute = true;
         if(num.length === 0){
@@ -60,12 +60,12 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "*"){
         
-        if(execute === true && cal !=""){
+        if(execute === true){
             calculate();
         }
         operator = "*";
     }
-    if (btn.textContent === "*" && cal != ""){
+    if (btn.textContent === "*"){
 
         execute = true;
         if(num.length === 0){
@@ -81,12 +81,12 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "/"){
         
-        if(execute === true && cal !=""){
+        if(execute === true){
             calculate();
         }
         operator = "/";
     }
-    if (btn.textContent === "/" && cal != ""){
+    if (btn.textContent === "/"){
 
         execute = true;
         if(num.length === 0){
