@@ -4,6 +4,7 @@ const scr = document.querySelector('.screen')
 let operator ='';
 let cal = '';
 let num = [];
+let execute = false;
 let result = 0;
 
 btn.forEach(btn => btn.addEventListener('click', ()=>{
@@ -13,16 +14,17 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     && btn.textContent != '/' && btn.textContent != '*'){
         
         cal+=btn.textContent;
-        
-         console.log("cal: " +cal);
-         scr.textContent = cal;
+        scr.textContent = cal;
     }
     if (btn.textContent === "+" && cal != ""){
         
+        if(execute === true){
             calculate();
+        }
 
         operator = "+";
         
+        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -34,11 +36,14 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     }
     if (btn.textContent === "-" && cal != ""){
         
-         calculate();
-
+        if(execute === true){
+            calculate();
+        }
+        
         operator = "-";
         
         
+        execute = true;
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -51,9 +56,13 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "*" && cal != ""){
         
+        if(execute === true){
             calculate();
+        }
         
         operator = "*";
+         
+        execute = true;
 
         if(num.length === 0){
             num[0] = parseInt(cal); 
@@ -68,10 +77,17 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
     
     if (btn.textContent === "/" && cal != ""){
         
-        calculate();
+        if(execute === true){
+            calculate();
+        }
         
         operator = "/";
         
+        if(execute === true){
+            calculate();
+        }
+        execute = true;
+
         if(num.length === 0){
             num[0] = parseInt(cal); 
              
@@ -91,16 +107,16 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
         cal 
     }
     
-    console.log(num);
+   // console.log(num);
 
 }));
 
 function calculate(){
 
-    if(execute === true){
-    }
+    
     num[1] = parseInt(cal);
-
+    
+    console.log("cal: " +operator);
     switch(operator){
         case "+":
                 
@@ -132,19 +148,19 @@ function calculate(){
             num[0]= result;
             console.log(result);
             break;
-            case "/":
+        case "/":
                 
-                result = num.reduce((total, num) =>{
-                return total / num;
-              });
+            result = num.reduce((total, num) =>{
+            return total / num;
+        });
               
-              scr.textContent = result;
-              num[0]= result;
-              
-              break;
+            scr.textContent = result;
+            num[0]= result;
+            break;
               
 
     }
+    execute = false;
     
 
 }
