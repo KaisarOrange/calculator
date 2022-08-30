@@ -32,6 +32,7 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             num[1] = parseFloat(cal);
             
         } 
+        scr.textContent = num[0] + " "+ operator ;
         cal='';
     }
     
@@ -49,6 +50,8 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             num[1] = parseFloat(cal);
             
         } 
+        
+        scr.textContent = num[0] + " "+ operator ;
         cal='';
     }
     
@@ -67,6 +70,8 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             num[1] = parseFloat(cal);
             
         } 
+        
+        scr.textContent = num[0] + " "+ operator ;
         cal='';
     }
     
@@ -86,6 +91,8 @@ btn.forEach(btn => btn.addEventListener('click', ()=>{
             num[1] = parseFloat(cal);
             
         } 
+        
+        scr.textContent = num[0] + " "+ operator ;
         cal='';
     }
 
