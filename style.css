@@ -17,6 +17,7 @@ body{
     min-width: 100px;
     border-radius: 16px;
     border: 2px solid black;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.464);
 }
 
 .item{
@@ -30,6 +31,12 @@ body{
     font-family: sans-serif;
     text-align: ;
 
+}
+.item:hover{
+    background-color: rgb(232, 230, 230);
+}
+.item:active{
+    background-color: rgb(147, 147, 147);
 }
 .screen{
     padding: 20px;
@@ -58,4 +65,7 @@ body{
     font-size: medium;
     padding: 5px;
     border: 2px solid black ;
+}
+.press{
+    background-color: gainsboro;
 }
