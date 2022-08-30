@@ -113,6 +113,7 @@ function calculate(){
         return;
     }
     switch(operator){
+        
         case "+":
                 
                 result = num.reduce((total, num) =>{
@@ -132,6 +133,7 @@ function calculate(){
                 return total * num;
                 });
                 break;
+
         case "/":
                 
                 result = num.reduce((total, num) =>{
